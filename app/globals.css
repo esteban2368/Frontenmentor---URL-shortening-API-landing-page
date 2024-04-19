@@ -26,9 +26,22 @@ body{
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
   grid-template-areas: "header  header  header"
                        "content content content"
                        "footer  footer  footer";
 
+}
+
+/*Styles for button links*/
+
+.linkButton{
+    background-color: hsl(var(--cyan));
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 50px;
+}
+.linkButton--block{
+    width: 100%;
 }

@@ -1,3 +1,38 @@
 .container{
     grid-area: content;
 }
+.hero{
+    position: relative;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    row-gap: 3.125rem;
+    grid-template-areas: "image-hero image-hero image-hero image-hero"
+                         "content-hero  content-hero  content-hero  content-hero";
+
+}
+.hero__image{
+    position: relative;
+    overflow: hidden;
+    height: 330px;
+    grid-area: image-hero;
+}
+.hero__imageIMG{
+   object-fit: cover;
+   object-position: left center;
+}
+.hero__content{
+    grid-area: content-hero;
+    text-align: center ;
+}
+.hero__contentTitle{
+    font-size: 2.5rem;
+    color: hsl(var(--very-dark-blue));
+    font-weight: 700;
+    line-height: 1.2;
+}
+.hero__contentText{
+    color: hsl(var(--grayish-violet));
+    line-height: 1.7;
+}

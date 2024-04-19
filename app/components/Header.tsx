@@ -15,7 +15,7 @@ const Header = () =>{
         setIsOpenModal(!isOpenModal)
     }
     return(
-        <header className={`${style.container} container px-6 py-8`}>
+        <header className={`${style.container} container px-6 pt-10 pb-6 sticky top-0 z-10`}>
             <nav className="flex justify-between">
                 <Link href='/'>
                     <Image
@@ -38,9 +38,8 @@ const Header = () =>{
                 <hr className={style.separateModal}/>
                 <div className="flex flex-col items-center self-stretch gap-6">
                     <Link href='/resources/'>Login</Link>
-                    <Link href='/resources/' className={`${style.linkButton} py-2`}>Sign Up</Link>
+                    <Link href='/resources/' className="linkButton linkButton--block py-2">Sign Up</Link>
                 </div>
-
             </Modal>
         </header>
     )
