@@ -1,0 +1,21 @@
+.content{
+    width: 100%;
+    max-width: 327px;
+    margin: auto;
+    background-color: hsl(var(--dark-violet));
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.25rem;
+}
+.overlay{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 95px;
+    left: 0;
+}

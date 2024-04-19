@@ -1,0 +1,19 @@
+.container{
+    background-color: white;
+    grid-area: header;
+}
+.icon__navbar{
+    color: hsl(var(--grayish-violet));
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.separateModal{
+    width: 100%;
+    border-color: hsl(var(--light-violet));
+}
+.linkButton{
+    background-color: hsl(var(--cyan));
+    width: 100%;
+    text-align: center;
+    border-radius: 50px;
+}
