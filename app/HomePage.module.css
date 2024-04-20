@@ -28,11 +28,66 @@
 }
 .hero__contentTitle{
     font-size: 2.5rem;
-    color: hsl(var(--very-dark-blue));
-    font-weight: 700;
     line-height: 1.2;
 }
 .hero__contentText{
-    color: hsl(var(--grayish-violet));
     line-height: 1.7;
+}
+.banner{
+    position: relative;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+}
+.banner__title{
+    color: white;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+.banner__bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(var(--dark-violet));
+    z-index: -1;
+}
+.cards{
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 5.625rem
+}
+.card{
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+.card__wrapIcon{
+    display: inline-block;
+    background-color: hsl(var(--dark-violet));
+    border-radius: 50%;
+    margin-top: -44px;
+}
+.card__title{
+    font-size: 1.3rem;
+}
+.card__text{
+    font-size: .93rem;
+    line-height: 1.7;
+}
+.card:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 90px;
+    bottom: -90px;
+    background-color: hsl(var(--cyan));
+
 }

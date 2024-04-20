@@ -8,7 +8,7 @@
 
   --red: 0, 87%, 67%;
 
-  --gray: 0, 0%, 75%;
+  --gray: 230, 25%, 95%;
   --grayish-violet: 257, 7%, 63%;
   --light-violet: 257, 19%, 36%;
   --very-dark-blue: 255, 11%, 22%;
@@ -18,6 +18,9 @@
 body{
   background-color: hsl(var(--gray));
   font-size: 1.125rem;
+}
+p{
+  color: hsl(var(--grayish-violet));
 }
 .container{
   max-width: 1140px;
@@ -36,6 +39,7 @@ body{
 /*Styles for button links*/
 
 .linkButton{
+    display: inline-block;
     background-color: hsl(var(--cyan));
     color: white;
     font-weight: 700;
@@ -44,4 +48,18 @@ body{
 }
 .linkButton--block{
     width: 100%;
+}
+
+/*Styles for titles*/
+
+.title{
+  color: hsl(var(--very-dark-blue));
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.title--size2{
+  font-size: 1.7rem;
+}
+.title--size3{
+  font-size: 1.3rem;
 }
