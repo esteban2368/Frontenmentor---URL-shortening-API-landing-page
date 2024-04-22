@@ -1,15 +1,22 @@
 .container{
     grid-area: content;
+    font-size: 16px;
+}
+.wrapContent{
+    background-color: hsl(var(--gray));
 }
 .hero{
     position: relative;
     background-color: white;
+    width: 100%;
+    max-width: 1290px;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, auto);
-    row-gap: 3.125rem;
-    grid-template-areas: "image-hero image-hero image-hero image-hero"
-                         "content-hero  content-hero  content-hero  content-hero";
+    row-gap: 3.125em;
+    grid-template-areas: "image-hero    image-hero    image-hero    image-hero   "
+                         "content-hero  content-hero  content-hero  content-hero ";
 
 }
 .hero__image{
@@ -27,10 +34,11 @@
     text-align: center ;
 }
 .hero__contentTitle{
-    font-size: 2.5rem;
+    font-size: 2.5em;
     line-height: 1.2;
 }
 .hero__contentText{
+    font-size: 1.125em;
     line-height: 1.7;
 }
 .banner{
@@ -46,7 +54,7 @@
 .banner__title{
     color: white;
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 1.7em;
 }
 .banner__bg{
     position: absolute;
@@ -56,7 +64,6 @@
     z-index: -1;
 }
 .cards{
-    padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 5.625rem
@@ -65,7 +72,6 @@
     position: relative;
     background-color: white;
     border-radius: 8px;
-    text-align: center;
 }
 .card__wrapIcon{
     display: inline-block;
@@ -74,10 +80,10 @@
     margin-top: -44px;
 }
 .card__title{
-    font-size: 1.3rem;
+    font-size: 1.3em;
 }
 .card__text{
-    font-size: .93rem;
+    font-size: .93em;
     line-height: 1.7;
 }
 .card:not(:last-child)::after{
@@ -90,4 +96,42 @@
     bottom: -90px;
     background-color: hsl(var(--cyan));
 
+}
+
+/*Breakpoint Desktop*/
+@media screen and (min-width:640px) {
+    .hero{
+        row-gap: 0;
+        grid-template-areas: "content-hero content-hero image-hero image-hero"
+                             "content-hero content-hero image-hero image-hero";
+    }
+    .container{
+        font-size: 18px;
+    }
+    .hero__content{
+        text-align: left;
+    }
+    .hero__image{
+        height: 480px;
+    }
+    .banner__title{
+        font-size: 2.2em;
+    }
+    .banner{
+        height: 250px;
+    }
+    .cards{
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.75rem;
+    }
+    .card:not(:last-child)::after{
+        left: 111%;
+        right: 0;
+        top: 60%;
+        transform: translateY(-60%) rotate(90deg);
+    }
+    .card__text{
+        font-size: .85em;
+    }
 }

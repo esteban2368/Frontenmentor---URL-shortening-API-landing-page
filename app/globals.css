@@ -16,7 +16,6 @@
 }
 
 body{
-  background-color: hsl(var(--gray));
   font-size: 1.125rem;
 }
 p{
@@ -24,9 +23,14 @@ p{
 }
 .container{
   max-width: 1140px;
+  width: 100%;
+  margin: auto;
 }
 .containerRoot{
   position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, auto);
@@ -36,6 +40,11 @@ p{
 
 }
 
+/*Styles for links*/
+.links{
+  color: hsl(var(--grayish-violet));
+  font-size: .875rem;
+}
 /*Styles for button links*/
 
 .linkButton{
@@ -46,6 +55,9 @@ p{
     text-align: center;
     border-radius: 50px;
 }
+.linkButton:hover{
+    opacity: .5;
+}
 .linkButton--block{
     width: 100%;
 }
@@ -54,12 +66,25 @@ p{
 
 .title{
   color: hsl(var(--very-dark-blue));
-  font-size: 2.5rem;
   font-weight: 700;
+  line-height: 1.2;
+}
+.title--size1{
+  font-size: 2.5em;
 }
 .title--size2{
-  font-size: 1.7rem;
+  font-size: 1.7em;
 }
 .title--size3{
-  font-size: 1.3rem;
+  font-size: 1.3em;
+}
+
+/*Breakpoint Desktop*/
+@media screen and (min-width:640px) {
+  .title--size1{
+    font-size: 4.3em;
+  }
+  .title--size2{
+    font-size: 2.2em;
+  }
 }

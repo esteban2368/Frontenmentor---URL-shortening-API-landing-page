@@ -10,8 +10,8 @@ import style from './Footer.module.css'
 const Footer = ()=>{
     return(
         <footer className={style.container}>
-            <div className={`${style.container__inner} flex flex-col gap-10 py-12`}>
-                <Link href='/'>
+            <div className={`${style.container__inner} container flex flex-col sm:flex-row justify-between gap-10 sm:gap-20 py-12`}>
+                <Link href='/' className='md:mr-auto'>
                     <Image
                         alt="Logo Shortly"
                         src={'./images/logo-light.svg'}
@@ -20,47 +20,47 @@ const Footer = ()=>{
                         className='m-auto'
                     />
                 </Link>
-                <div className={style.section}>
+                <div className='text-center sm:text-left'>
                     <h3 className='mb-7'>Features</h3>
-                    <ul className="flex flex-col gap-3">
-                        <li className={style.linkItem}>
+                    <ul className="links flex flex-col gap-3">
+                        <li>
                             <Link href="/">Link Shortening</Link>
                         </li>
-                        <li className={style.linkItem}>
+                        <li>
                             <Link href="/">Branded Links</Link>
                         </li>
-                        <li className={style.linkItem}>
+                        <li>
                             <Link href="/">Analytics</Link>
                         </li>
                     </ul>     
                 </div>
-                <div className={style.section}>
+                <div className="text-center sm:text-left">
                     <h3 className='mb-7'>Resources</h3>
-                    <ul className="flex flex-col gap-3">
-                        <li className={style.linkItem}>
+                    <ul className="links flex flex-col gap-3">
+                        <li>
                             <Link href="/">Blog</Link>
                         </li>
-                        <li className={style.linkItem}>
+                        <li>
                             <Link href="/">Developers</Link>
                         </li>
-                        <li className={style.linkItem}>
+                        <li>
                             <Link href="/">Support</Link>
                         </li>
                     </ul>     
                 </div>
-                <div className={style.section}>
+                <div className="text-center sm:text-left">
                     <h3 className='mb-7'>Company</h3>
-                    <ul className="flex flex-col gap-3">
-                        <li className={style.linkItem}>
+                    <ul className="links flex flex-col gap-3">
+                        <li>
                             <Link href="/">About</Link>
                         </li>
-                        <li className={style.linkItem}>
+                        <li>
                             <Link href="/">Our Team</Link>
                         </li>
-                        <li className={style.linkItem}>
+                        <li>
                             <Link href="/">Careers</Link>
                         </li>
-                        <li className={style.linkItem}>
+                        <li>
                             <Link href="/">Contact</Link>
                         </li>
                     </ul>     

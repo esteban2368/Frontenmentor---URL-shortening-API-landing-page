@@ -3,15 +3,3 @@
     color: white;
     background-color: hsl(var(--very-dark-violet));
 }
-.container__inner{
-    
-}
-.section{
-    text-align: center;
-}
-
-.linkItem{
-    color: hsl(var(--grayish-violet));
-    font-size: .875rem;
-
-}
