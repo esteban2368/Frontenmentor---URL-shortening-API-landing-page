@@ -3,6 +3,7 @@
     font-size: 16px;
 }
 .wrapContent{
+    position: relative;
     background-color: hsl(var(--gray));
 }
 .hero{
@@ -50,6 +51,18 @@
     align-items: center;
     justify-content: center;
     gap: 1.25rem;
+}
+.bannerShorten{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: auto;
+    width:  calc(100% - 48px);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 2;
+    
 }
 .banner__title{
     color: white;
@@ -119,6 +132,9 @@
     }
     .banner{
         height: 250px;
+    }
+    .bannerShorten{
+        height: auto;
     }
     .cards{
         flex-direction: row;

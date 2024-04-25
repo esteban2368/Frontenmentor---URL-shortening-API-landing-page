@@ -13,7 +13,7 @@ const Button = ({children, isMenu= false, onClickAction}:buttonsProps) =>{
                 {children}
             </button>
             :
-            <button type="button">
+            <button type="submit">
                 {children}
             </button>
     )
