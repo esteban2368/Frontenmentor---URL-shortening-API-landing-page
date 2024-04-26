@@ -24,11 +24,11 @@ export default function Home() {
           >Get Started</Link>
         </div>
       </div>
-      <section className={`${styleHome.wrapContent} sm:pb-24 pt-48`}>
+      <section className={`${styleHome.wrapContent} sm:pb-24 pt-20`}>
         <div className="px-6 sm:px-0">
           <Shorten/>
         </div>
-        <div className="text-center pb-16 sm:pb-24 px-6 sm:px-0">
+        <div className="text-center py-16 sm:py-24 px-6 sm:px-0">
           <h3 className="title title--size2 mb-6">Advanced Statistics</h3>
           <p className="text-base sm:text-lg leading-7">Track how your links are performing across the web with <br/> our 
     advanced statistics dashboard.</p>

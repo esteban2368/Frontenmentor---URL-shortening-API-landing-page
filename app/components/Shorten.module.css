@@ -1,5 +1,6 @@
 .input{
     border-radius: 6px;
+    width: 100%;
 }
 .button{
     color: white;
@@ -16,6 +17,9 @@
     background-color: white;
     border-radius: 6px;
 }
+.shortenedLink:first-child{
+    margin-top: 1.5rem;
+}
 .shortenedLink__url{
     border-bottom: solid 1px hsla(var(--grayish-violet),.3);
     color: hsl(var(--very-dark-blue));
@@ -23,7 +27,11 @@
 .shortenedLink__link{
     color: hsl(var(--cyan));
 }
-
+.error{
+    color: hsl(var(--red));
+    font-size: .812rem;
+    font-style: italic;
+}
 /*Breakpoint Desktop*/
 @media screen and (min-width:640px) {
     .shortenedLink__url{
