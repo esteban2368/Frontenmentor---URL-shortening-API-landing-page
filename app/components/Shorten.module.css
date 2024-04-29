@@ -2,6 +2,12 @@
     border-radius: 6px;
     width: 100%;
 }
+.inputError::placeholder{
+    color: hsla(var(--red),.5);
+}
+.inputError{
+    border: solid 2px hsl(var(--red));
+}
 .button{
     color: white;
     font-weight: 700;
@@ -13,6 +19,12 @@
 .button:hover{
     background-color: hsl(var(--light-cyan));
 }
+.buttonCopied{
+    background-color: hsl(var(--dark-violet));
+}
+.buttonCopied:hover{
+    background-color: hsla(var(--dark-violet),.7);
+}
 .shortenedLink{
     background-color: white;
     border-radius: 6px;
@@ -23,6 +35,9 @@
 .shortenedLink__url{
     border-bottom: solid 1px hsla(var(--grayish-violet),.3);
     color: hsl(var(--very-dark-blue));
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .shortenedLink__link{
     color: hsl(var(--cyan));

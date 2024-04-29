@@ -1,6 +1,20 @@
-const ListShortenedLinks = ()=>{
+import { ShortenedLinks } from "../types"
+
+import ShortenedLink from "./ShortenedLink"
+
+interface PropsLisShortenedLinks{
+    links: ShortenedLinks[] | null
+}
+
+const ListShortenedLinks = ({links}:PropsLisShortenedLinks)=>{
     return(
-        <p>Hola estoy aqui</p>
+        <>
+            {links ? 
+                links.map((link)=>
+                    <ShortenedLink key={link.id} link={link}/>
+                )
+                : ''}
+        </>
     )
 }
 

@@ -2,7 +2,7 @@ import uuid4 from "uuid4"
 
 import style from "./Shorten.module.css"
 
-const ZodErrors = ({errors}:{errors:string[] | null})=>{
+const ZodErrors = ({errors}:{errors:string[] | undefined |null})=>{
     if(!errors) return null
     return(
         <div className={`${style.error} mt-2`}>
