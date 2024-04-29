@@ -30,7 +30,7 @@
     border-radius: 6px;
 }
 .shortenedLink:first-child{
-    margin-top: 1.5rem;
+    margin-top: 3rem;
 }
 .shortenedLink__url{
     border-bottom: solid 1px hsla(var(--grayish-violet),.3);

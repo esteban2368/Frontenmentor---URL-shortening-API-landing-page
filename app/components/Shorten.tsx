@@ -1,17 +1,18 @@
 "use client"
 import Image from "next/image"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState} from "react"
 import { useRef } from "react"
-import { useFormStatus } from "react-dom"
 import { useFormState } from "react-dom"
 
-import FormShorten from "./FormShorten"
-import ListShortenedLinks from "./ListShortenedLinks"
 import ZodErrors from "./zodErrors"
-import uuid4 from "uuid4"
+import SubmitShorten from "./SubmitShorten"
+import ListShortenedLinks from "./ListShortenedLinks"
+import useLocalStorage from "../hooks/useLocalStorage"
+
 import { ShortenedLinks } from "../types"
 import { sendData } from "../actions/actions"
+import uuid4 from "uuid4"
 
 import styleHome from "../HomePage.module.css"
 import style from "./Shorten.module.css"
@@ -25,12 +26,29 @@ const initialState = {
 const Shorten = () =>{
     const refForm = useRef<HTMLFormElement | null>(null)
     const [state, formAction] = useFormState(sendData, null)
-    const [shortenedLinks, setShortenedLinks] = useState<ShortenedLinks[] | null>([])
-    if(!state?.error) refForm.current?.reset()
 
+    const [shortenedLinks, setShortenedLinks] = useLocalStorage("shortenedLinks", [])
+    const classNameError = state?.error ? style["inputError"] : "";
+
+    const updateShortenedLinks = ()=>{
+        if(!state?.error) refForm.current?.reset()
+        if(state?.data && !state?.error) setShortenedLinks(
+            [
+                ...shortenedLinks!,
+                {
+                    id:uuid4(),
+                    url: state?.data?.dataUrl,
+                    shortenLink: state?.data?.urlShorten?.result_url
+                }
+            ]
+        )
+    }
     useEffect(()=>{
+        
+        updateShortenedLinks()
 
-    }, [shortenedLinks])
+    },[state])
+
     return(
         <>
             <div className={`${styleHome.banner} ${styleHome.bannerShorten} container p-6 sm:px-16 sm:py-12`}>
@@ -49,21 +67,15 @@ const Shorten = () =>{
                     />
                 </div>
                 <form ref={refForm} action={formAction} className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 w-full">
-                    <FormShorten stateForm={state} onShortenedLinksChange={setShortenedLinks} shortenedLinks={shortenedLinks}/>
+                    <div className="grow relative">
+                        <input type="text" name="url" className={`${style.input} ${classNameError} px-4 sm:px-8 py-3 sm:py-5`} placeholder="Shorten a link here..." />
+                        <ZodErrors errors={state?.error?.url}/>
+                    </div>
+                    <SubmitShorten/>
                 </form>
             </div>
             <ul className="container flex flex-col gap-6">
                 <ListShortenedLinks links={shortenedLinks}/>
-                <pre>{JSON.stringify(state, null)}</pre>
-                {/*shortenedLinks.map((shortenedLink)=>
-                    <div key={shortenedLink.id} className={`${style.shortenedLink} sm:flex justify-between items-center sm:px-6 sm:py-4`}>
-                        <div className={`${style.shortenedLink__url} p-4 sm:p-0`}>{shortenedLink.url}</div>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 p-4 sm:p-0">
-                            <div className={style.shortenedLink__link}>{shortenedLink.shortenLink}</div>
-                            <button type="button" className={`${style.button} ${style.buttonLink} p-2 sm:px-6`}>Copy</button>   
-                        </div>
-                    </div>
-                )*/}
             </ul>
         </> 
     )

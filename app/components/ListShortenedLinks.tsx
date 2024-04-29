@@ -3,7 +3,7 @@ import { ShortenedLinks } from "../types"
 import ShortenedLink from "./ShortenedLink"
 
 interface PropsLisShortenedLinks{
-    links: ShortenedLinks[] | null
+    links: ShortenedLinks[]
 }
 
 const ListShortenedLinks = ({links}:PropsLisShortenedLinks)=>{

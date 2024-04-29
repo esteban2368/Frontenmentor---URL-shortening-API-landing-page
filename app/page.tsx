@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import Shorten from "./components/Shorten";
+import dynamic from "next/dynamic";
+
 import styleHome from "./HomePage.module.css"
+
+const Shorten = dynamic(()=> import("./components/Shorten"),{
+  loading: () => <div className={styleHome.containerSkeleton}>Loading...</div>,
+  ssr: false,
+});
 export default function Home() {
   return (
     <main className={styleHome.container}>
