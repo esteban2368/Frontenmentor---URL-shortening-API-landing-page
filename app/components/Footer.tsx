@@ -66,16 +66,16 @@ const Footer = ()=>{
                     </ul>     
                 </div>
                 <div className={`${style.section__social} flex justify-center gap-6`}>
-                    <a href="">
+                    <a href="https://www.facebook.com/brayan.velasquezdiaz?mibextid=ZbWKwL" target='_blank'>
                         <FontAwesomeIcon icon={faSquareFacebook} size='xl'/>
                     </a>
-                    <a href="">
+                    <a href="https://twitter.com/"  target='_blank'>
                         <FontAwesomeIcon icon={faTwitter} size='xl'/>
                     </a>
-                    <a href="">
+                    <a href="https://co.pinterest.com/"  target='_blank'>
                         <FontAwesomeIcon icon={faPinterest} size='xl'/>
                     </a>
-                    <a href="">
+                    <a href="https://www.instagram.com/"  target='_blank'>
                         <FontAwesomeIcon icon={faInstagram} size='xl'/>
                     </a>
                 </div>
