@@ -4,7 +4,7 @@ This is a solution to the [URL shortening API landing page](https://www.frontend
 
 ## Overview
 
-![Screenshot of the project](./public/screnshot.png)
+![Screenshot of the project](./public/images/screnshot.png)
 
 ### Links
 
