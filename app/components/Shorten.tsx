@@ -30,20 +30,20 @@ const Shorten = () =>{
     const [shortenedLinks, setShortenedLinks] = useLocalStorage("shortenedLinks", [])
     const classNameError = state?.error ? style["inputError"] : "";
 
-    const updateShortenedLinks = ()=>{
-        if(!state?.error) refForm.current?.reset()
-        if(state?.data && !state?.error) setShortenedLinks(
-            [
-                ...shortenedLinks!,
-                {
-                    id:uuid4(),
-                    url: state?.data?.dataUrl,
-                    shortenLink: state?.data?.urlShorten?.result_url
-                }
-            ]
-        )
-    }
     useEffect(()=>{
+        const updateShortenedLinks = ()=>{
+            if(!state?.error) refForm.current?.reset()
+            if(state?.data && !state?.error) setShortenedLinks(
+                [
+                    ...shortenedLinks!,
+                    {
+                        id:uuid4(),
+                        url: state?.data?.dataUrl,
+                        shortenLink: state?.data?.urlShorten?.result_url
+                    }
+                ]
+            )
+        }
         
         updateShortenedLinks()
 
